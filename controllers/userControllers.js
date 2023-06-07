@@ -10,14 +10,12 @@ const getAllUsers = async (req, res, next) => {
 }
 
 const getOneUser = async (req, res, next) => {
-    console.log("getOneUser");
-    console.log(req.params.id);
-    // try {
-    //     const allUsers = await UserCollection.find()
-    //     return res.status(200).json(allUsers)
-    // } catch (error) {
-    //     next(error)
-    // }
+    try {
+        const allUsers = await User.find({"_id":req.params.id})
+        return res.status(200).json(allUsers)
+    } catch (error) {
+        next(error)
+    }
 }
 
 const createOneUser = async (req, res, next) => {
