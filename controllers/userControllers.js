@@ -59,6 +59,14 @@ const updateOneUser = async (req, res, next) => {
 const deleteOneUser = async (req, res, next) => {
     console.log("deleteOneUser");
     console.log(req.params.id);
+    try {
+        const {id} = req;
+        const deletedUser = await User.findByIdAndDelete({id})
+        console.log("Deleted user: "+deletedUser);
+        return res.json(deletedUser).sendStatus(200)
+    }catch(error){
+        next(error)
+    }
 }
 
 
