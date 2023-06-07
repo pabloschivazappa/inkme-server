@@ -11,8 +11,8 @@ const getAllUsers = async (req, res, next) => {
 
 const getOneUser = async (req, res, next) => {
     try {
-        const allUsers = await User.find({"_id":req.params.id})
-        return res.status(200).json(allUsers)
+        const oneUser = await User.find({"_id":req.params.id})
+        return res.status(200).json(oneUser)
     } catch (error) {
         next(error)
     }
@@ -29,7 +29,7 @@ const createOneUser = async (req, res, next) => {
 
         // const { lat, lon } = await getGeoLocationByPostalCode(postalCode)
            
-        
+        // TODO SEND BACK USER CREATED WITH ID FROM DB
 
         const { _id } = await User.create({
             email,
@@ -52,6 +52,7 @@ const createOneUser = async (req, res, next) => {
     }
 }
 
+// TODO UPDATE USER INFORMATION
 const updateOneUser = async (req, res, next) => {
     console.log("updateOneUser");
     console.log(req.params.id);
