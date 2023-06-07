@@ -17,6 +17,7 @@ const port = 3000
 // DB CONECTION
 connectDB()
 
+// TODO TOKEN AUTHENTICATION
 // Middleware
 app.use(express.json());
 app.use(cors({
