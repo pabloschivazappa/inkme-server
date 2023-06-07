@@ -10,6 +10,8 @@ const getAllUsers = async (req, res, next) => {
 }
 
 const getOneUser = async (req, res, next) => {
+    console.log("getOneUser");
+    console.log(req.params.id);
     // try {
     //     const allUsers = await UserCollection.find()
     //     return res.status(200).json(allUsers)
@@ -52,16 +54,21 @@ const createOneUser = async (req, res, next) => {
 }
 
 const updateOneUser = async (req, res, next) => {
-
+    console.log("updateOneUser");
+    console.log(req.params.id);
 }
 
 const deleteOneUser = async (req, res, next) => {
-
+    console.log("deleteOneUser");
+    console.log(req.params.id);
 }
 
 
 module.exports = {
     getAllUsers,
-    createOneUser
+    createOneUser,
+    getOneUser,
+    updateOneUser,
+    deleteOneUser
 }
 
