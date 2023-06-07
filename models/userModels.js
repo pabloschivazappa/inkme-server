@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     profilePicture: { type: String },
     bio: { type: String },
-    bookings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Booking' }],
+    // bookings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Booking' }],
   });
   
 //   // Tattoo artist (admin) schema
@@ -44,4 +44,4 @@ const userSchema = new mongoose.Schema({
 //   const Service = mongoose.model('Service', serviceSchema);
 //   const Booking = mongoose.model('Booking', bookingSchema);
 
-  module.exports = UserCollection
+  module.exports = User
