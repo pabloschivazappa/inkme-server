@@ -10,13 +10,14 @@ const cookieParser = require('cookie-parser')
 const connectDB = require('./db/connectDB.js')
 const Router = require('./routes/routes.js')
 
+// Settings
 const app = express()
 const port = 3000
 
 // DB CONECTION
 connectDB()
 
-//generell middleware
+// Middleware
 app.use(express.json());
 app.use(cors({
   origin: true,
@@ -28,9 +29,9 @@ app.use(cors({
 }))
 app.use(cookieParser())
 
+// Routes
 app.use('/', Router)
 
 app.listen(port, () => {
-  // console.log(`Example app listening on port ${port}`)
   console.log(`http://localhost:${port}/`)
 })
