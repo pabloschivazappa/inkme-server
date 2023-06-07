@@ -1,12 +1,12 @@
 const User = require('../models/userModels')
 
 const getAllUsers = async (req, res, next) => {
-    // try {
-    //     const allUsers = await UserCollection.find()
-    //     return res.status(200).json(allUsers)
-    // } catch (error) {
-    //     next(error)
-    // }
+    try {
+        const allUsers = await User.find()
+        return res.status(200).json(allUsers)
+    } catch (error) {
+        next(error)
+    }
 }
 
 const getOneUser = async (req, res, next) => {
