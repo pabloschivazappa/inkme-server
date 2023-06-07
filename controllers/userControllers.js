@@ -24,6 +24,7 @@ const createOneUser = async (req, res, next) => {
               
         if(!email || !password || !username) throw new ErrorStatus('missing fields', 400)
         
+        // TODO BRING IN JWT
         // const hash = await bcrypt.hash(password, 10);
 
         // const { lat, lon } = await getGeoLocationByPostalCode(postalCode)
@@ -65,7 +66,6 @@ const deleteOneUser = async (req, res, next) => {
         next(error)
     }
 }
-
 
 module.exports = {
     getAllUsers,

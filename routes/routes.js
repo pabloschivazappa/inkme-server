@@ -15,5 +15,8 @@ Router.route('/users/createOne').post(createOneUser)
 Router.route('/users/:id').get(getOneUser)
 Router.route('/users/:id').put(updateOneUser)
 Router.route('/users/:id').delete(deleteOneUser)
+// TODO SIGN UP
+// TODO LOG IN
+// TODO LOG OUT
 
 module.exports = Router
